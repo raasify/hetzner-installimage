@@ -8,7 +8,7 @@ then
   exit 1
 fi 
 
-. ~/.bashrc
+source /root/.oldroot/nfs/bash_aliases
 
 HOSTNAME=${1}
 PRIVATE_IP=${2}
