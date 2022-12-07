@@ -8,6 +8,8 @@ then
   exit 1
 fi 
 
+. ~/.bashrc
+
 HOSTNAME=${1}
 PRIVATE_IP=${2}
 

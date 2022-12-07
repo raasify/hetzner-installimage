@@ -8,6 +8,9 @@ then
   exit 1
 fi 
 
+. ~/.bashrc
+
+
 HOSTNAME=${1}
 
 cat << EOF > /tmp/install.conf
