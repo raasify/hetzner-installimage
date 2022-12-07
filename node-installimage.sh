@@ -8,8 +8,6 @@ then
   exit 1
 fi 
 
-source /root/.oldroot/nfs/bash_aliases
-
 HOSTNAME=${1}
 PRIVATE_IP=${2}
 
@@ -69,6 +67,6 @@ mkdir -p ~/raasify-deploy/scripts
 EOS
 
 # https://github.com/hetzneronline/installimage/blob/6358b0db57866bf0cffca657e3035deab7a77908/get_options.sh
-installimage -c /tmp/install.conf -a -x /tmp/postsetup.sh
+/root/.oldroot/nfs/install/installimage -c /tmp/install.conf -a -x /tmp/postsetup.sh
 
 
