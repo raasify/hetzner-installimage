@@ -62,6 +62,14 @@ PREFIX=24
 MTU=1400
 EOF
 
+
+# add /etc/resolv.conf
+cat << EOF > /etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
+
+
 mkdir -p ~/raasify-deploy/scripts
 
 EOS
