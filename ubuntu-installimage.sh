@@ -16,9 +16,8 @@ HOSTNAME=${1}
 cat << EOF > /tmp/install.conf
 
 DRIVE1 /dev/nvme0n1
-DRIVE2 /dev/nvme1n1
 
-SWRAID 1
+SWRAID 0
 
 HOSTNAME ${HOSTNAME}
 
@@ -50,10 +49,7 @@ EOS
 
 chmod 755 /tmp/postsetup.sh
 
-# https://github.com/hetzneronline/installimage/blob/6358b0db57866bf0cffca657e3035deab7a77908/get_options.sh
-#/root/.oldroot/nfs/install/installimage -c /tmp/install.conf -a -x /tmp/postsetup.sh
-
 sgdisk -Z /dev/nvme0n1
 sgdisk -Z /dev/nvme1n1
 
-/root/.oldroot/nfs/install/installimage -c /tmp/install.conf -a
+/root/.oldroot/nfs/install/installimage -c /tmp/install.conf -a -x /tmp/postsetup.sh
